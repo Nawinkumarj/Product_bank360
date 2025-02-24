@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ServiceData from "../data/ServiceData";
 import { assets } from "../assets/assets";
@@ -9,6 +10,9 @@ import "animate.css";
 const CompanyDetail = () => {
   const { id, subserviceId, companyId } = useParams();// Get service, subservice, and company IDs from URL
  const navigate = useNavigate();
+ useEffect(() => {
+  new WOW.WOW().init();
+}, []);
 
 
   const service = ServiceData.find((s) => s.id === parseInt(id));
