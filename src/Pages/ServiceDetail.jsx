@@ -1,10 +1,9 @@
-import { useEffect } from "react";
+
 import { useParams, Link, useNavigate } from "react-router-dom";
 import ServiceData from "../data/ServiceData";
 import { assets } from "../assets/assets";
 import { ArrowLeft } from "lucide-react";
-import WOW from "wowjs";
-import "animate.css";
+
 
 
 
@@ -22,9 +21,7 @@ const ServiceDetail = () => {
   const { id } = useParams(); // Get the service ID from URL
    const navigate = useNavigate();
   const service = ServiceData.find((s) => s.id === parseInt(id));
-  useEffect(() => {
-    new WOW.WOW().init();
-  }, []);
+  
 
   if (!service) {
     return <h2>Service Not Found</h2>;

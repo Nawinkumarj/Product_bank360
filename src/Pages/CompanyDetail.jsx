@@ -1,18 +1,15 @@
-import { useEffect } from "react";
+
 import { useParams, useNavigate } from "react-router-dom";
 import ServiceData from "../data/ServiceData";
 import { assets } from "../assets/assets";
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
-import WOW from "wowjs";
-import "animate.css";
+
 
 const CompanyDetail = () => {
   const { id, subserviceId, companyId } = useParams();// Get service, subservice, and company IDs from URL
  const navigate = useNavigate();
- useEffect(() => {
-  new WOW.WOW().init();
-}, []);
+
 
 
   const service = ServiceData.find((s) => s.id === parseInt(id));
@@ -40,7 +37,7 @@ const CompanyDetail = () => {
           </div>
         </div>
         <div className="companyIn-bg">
-          <div className="companyIn-bg1 wow animate__animated animate__slideInLeft">
+          <div className="companyIn-bg1">
             <img src={assets.s2} />
             <div className="companyIn-content1">
               <h2>entities</h2>
@@ -56,7 +53,7 @@ const CompanyDetail = () => {
               </div>
             </div>
           </div>
-          <div className="companyIn-bg2 wow animate__animated animate__slideInRight">
+          <div className="companyIn-bg2 ">
             <img src={assets.s3} />
             <div className="companyIn-content2">
               <h2>services</h2>
